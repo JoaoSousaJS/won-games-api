@@ -1,11 +1,11 @@
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import styled, {css} from 'styled-components';
 
 import Logo from '../../../assets/images/logo-won-white.svg';
 
 const Wrapper = styled.div`
-  background-color: ${(props) => props.theme.main.colors.won.blue};
-  height: ${props => props.theme.main.sizes.leftMenu.height};
+  ${({ theme }) => css`
+  background-color: ${theme.main.colors.won.blue};
+  height: ${theme.main.sizes.leftMenu.height};
 
 
   .projectName {
@@ -18,24 +18,8 @@ const Wrapper = styled.div`
     background-position: center center;
     background-size: 12rem;
   }
+  `}
+
 `;
-
-Wrapper.defaultProps = {
-  theme: {
-    main: {
-      colors: {
-        leftMenu: {},
-      },
-      sizes: {
-        header: {},
-        leftMenu: {},
-      },
-    },
-  },
-};
-
-Wrapper.propTypes = {
-  theme: PropTypes.object,
-};
 
 export default Wrapper;
