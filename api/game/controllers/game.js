@@ -6,8 +6,8 @@
  */
 
 module.exports = {
-  populate: () => {
-    console.log("Initializing")
-    ctx.send({ok: true})
+  populate: (ctx) => {
+    console.log("Starting to pupulate...")
+    ctx.send("Finished populating!")
   }
 };
