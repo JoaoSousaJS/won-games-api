@@ -18,7 +18,7 @@ const HomePage = () => {
   const [rows, setRows] = useState([])
 
   useEffect(() => {
-    axios.get("https://api.github.com/users/JoaoSousaJS/repos").then(res => setRows(res.data)).catch(e => strapi.notification.error('Github API limit exceeded', e))
+    axios.get("https://api.github.com/users/JoaoSousaJS/repos").then(res => setRows(res.data)).catch(e => strapi.notification.error(`Github API fail ${e}`))
   },[])
   const headers = [
     {
